@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 4599478497228740258}
   - component: {fileID: 6363736610816788970}
   - component: {fileID: 8228729080178745318}
+  - component: {fileID: -3082173771443249002}
   m_Layer: 3
   m_Name: player
   m_TagString: Player
@@ -629,6 +630,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerinfection: {fileID: 6363736610816788970}
   test: 10
+--- !u!114 &-3082173771443249002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164788592048299217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b773ba2c2bef3c40b4997c13bdd9d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 10
+  inventorySystem:
+    inventorySlots:
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
 --- !u!1 &3145063527337980120
 GameObject:
   m_ObjectHideFlags: 0
