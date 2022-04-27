@@ -37,39 +37,44 @@ public class CreateAndJoiningRooms : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel("Game");
     }
-        /*lobbyPannel.SetActive(false);
-        roomPannel.SetActive(true);
-        roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name;
-    }
-
-    public void OnClickLeaveRoom()
-    {
-        PhotonNetwork.LeaveRoom();
-    }
-
-    public override void OnLeftRoom()
-    {
-        roomPannel.SetActive(false);
-        lobbyPannel.SetActive(true);
-    }
 
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinLobby();
+        PhotonNetwork.LoadLevel("Lobby");
     }
+    /*lobbyPannel.SetActive(false);
+    roomPannel.SetActive(true);
+    roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name;
+}
 
-    
+public void OnClickLeaveRoom()
+{
+    PhotonNetwork.LeaveRoom();
+}
 
-    public void OnClickStart()
+public override void OnLeftRoom()
+{
+    roomPannel.SetActive(false);
+    lobbyPannel.SetActive(true);
+}
+
+public override void OnConnectedToMaster()
+{
+    PhotonNetwork.JoinLobby();
+}
+
+
+
+public void OnClickStart()
+{
+    start = true;
+}
+
+void Update()
+{
+    if (start)
     {
-        start = true;
+        PhotonNetwork.LoadLevel("Game");
     }
-
-    void Update()
-    {
-        if (start)
-        {
-            PhotonNetwork.LoadLevel("Game");
-        }
-    }*/
-    }
+}*/
+}
