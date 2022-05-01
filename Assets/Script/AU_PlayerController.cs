@@ -8,6 +8,8 @@ public class AU_PlayerController : MonoBehaviour
     public infection playerinfection;
     public int test = 10;
 
+    public GameObject head;
+
     private bool Initalise = false;
 
     PhotonView view;
@@ -15,6 +17,10 @@ public class AU_PlayerController : MonoBehaviour
     private void Start()
     {
         view = GetComponent<PhotonView>();
+        if (view.IsMine)
+        {
+            head.SetActive(false);
+        }
     }
 
     void Update()
@@ -28,6 +34,7 @@ public class AU_PlayerController : MonoBehaviour
 
     public void BecomeImposter(int ImposterNumber)
     {
+        Debug.Log(ImposterNumber);
         if (view.Owner == PhotonNetwork.PlayerList[ImposterNumber])
         {
             playerinfection.team = "alfa";

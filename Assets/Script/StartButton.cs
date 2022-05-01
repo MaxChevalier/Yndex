@@ -7,6 +7,7 @@ public class StartButton : MonoBehaviour
 {
     public GameObject button ;
     public static bool isGameStarted = false;
+    public static bool isthisclient = false;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class StartButton : MonoBehaviour
                 if (Physics.Raycast(ray,out hit) && hit.collider.gameObject == gameObject)
                 {
                     isGameStarted = true;
+                    isthisclient = true;
                 }
             }
         }

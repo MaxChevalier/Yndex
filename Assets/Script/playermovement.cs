@@ -16,37 +16,46 @@ public class playermovement : MonoBehaviour
     public float jumpheight = 3f;
 
     PhotonView view;
+    Animator animator;
+    Transform transform;
 
     Vector3 velocity;
     bool isGrounded;
 
+    public bool Disable = false;
+
     private void Start()
     {
         view = GetComponent<PhotonView>();
+        animator = GetComponent<Animator>();
+        transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        isGrounded = Physics.CheckSphere(groundcheck.position, groundDistance, groundMask);
+        StartCoroutine("animationtest");
 
-
-        if (view.IsMine)
+        if (view.IsMine && !Disable)
         {
-            isGrounded = Physics.CheckSphere(groundcheck.position, groundDistance, groundMask);
-
             if (isGrounded && velocity.y < 0)
             {
                 velocity.y = -2f;
             }
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
+            if (x==0 && z == 0)
+            {
+                animator.SetBool("iswalking", false);
+            }
+            else
+            {
+                animator.SetBool("iswalking", true);
+            }
 
             Vector3 move = transform.right * x + transform.forward * z;
             controller.Move(move * speed * Time.deltaTime);
-
-
-
-
 
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
@@ -57,5 +66,13 @@ public class playermovement : MonoBehaviour
 
             controller.Move(velocity * Time.deltaTime);
         }
+    }
+
+    IEnumerator animationtest()
+    {
+        Vector3 startPos = transform.position;
+        yield return new WaitForSeconds(0.1f);
+        Vector3 finalPos = transform.position;
+        animator.SetBool("isonground", isGrounded);
     }
 }

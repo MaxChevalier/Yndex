@@ -41,6 +41,8 @@ MonoBehaviour:
   - RespawnSpaceship
   - Starting
   - RPC_SyncImposter
+  - RCP_StartTp
+  - RPC_GetOutItem
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

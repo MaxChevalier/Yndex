@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class infection : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class infection : MonoBehaviour
     private bool isInTime = false;
     public GameObject infecparticule;
 
+    PhotonView view;
+
     void Start()
     {
         infecparticule.SetActive(false);
+        view = GetComponent<PhotonView>();
     }
 
     void OnTriggerStay(Collider PlayerColid)
@@ -37,6 +41,23 @@ public class infection : MonoBehaviour
 
     void Update()
     {
+        if (view.IsMine)
+        {
+            if (team == "alfa")
+            {
+                showteam.teamtxt = "alfa";
+            }
+            else if (team == "surv")
+            {
+                showteam.teamtxt = "survivant";
+            }
+            else if (team == "inf")
+            {
+                showteam.teamtxt = "infecter";
+            }
+        }
+        
+
         if (infecting && !isInTime)
         {
             isInTime = true;

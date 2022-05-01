@@ -13,7 +13,7 @@ public class chose_impostor : MonoBehaviourPun
 
     void Update()
     {
-        if (StartButton.isGameStarted && !Initalise)
+        if (StartButton.isGameStarted && StartButton.isthisclient && !Initalise)
         {
             Initalise = true;
             PickImposter();
