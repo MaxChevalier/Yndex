@@ -32,5 +32,6 @@ public class AU_PlayerController : MonoBehaviour
         {
             playerinfection.team = "alfa";
         }
+            Debug.Log(ImposterNumber);
     }
 }

@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b4877bbc73d35545b30d0be346cb288, type: 3}
-  m_Name: test Item
+  m_Name: item 1
   m_EditorClassIdentifier: 
-  ID: 0
-  DisplayName: test 1
-  Description: essai 1
-  Icon: {fileID: 21300000, guid: 76ffcaa2c0952a743821526bf803977f, type: 3}
-  MaxStackSize: 1
+  id: InventoryItem_matraque
+  displayName: matraque
+  icon: {fileID: 0}
+  prefab: {fileID: 919132149155446097, guid: 2c225045ddb3aac449123b9fa7ceed28, type: 3}
